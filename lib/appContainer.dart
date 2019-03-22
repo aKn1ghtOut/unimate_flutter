@@ -17,7 +17,7 @@ class AppContainer extends StatefulWidget
 {
   State createState() => new AppContainerState();
   final Widget 
-    homePage = HomePage(),
+    homePage = HomePage(key: Key("homePageKey")),
     schedulePage = SchedulePage(), 
     shoutBoxPage = ShoutBoxPage(), 
     fastTrackpage = FastTrackPage(), 

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../res/colors.dart';
 
 import './BasePage.dart';
-import '../ui/general.dart';
+import '../ui/misc.dart';
 
 class HomePage extends StatefulWidget
 {
+
+  HomePage({Key key}) : super(key:key);
+
   @override
   State<StatefulWidget> createState() => new HomePageState();
 }
@@ -24,17 +26,17 @@ class HomePageState extends State<HomePage>
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         GeneralCard(
-          title: "C315",
+          title: "...",
           color: MyColors.greenLight,
           colorDark: MyColors.greenDark,
         ),
         GeneralCard(
-          title: "D026",
+          title: "...",
           color: MyColors.blueLight,
           colorDark: MyColors.blueDark,
         ),
         GeneralCard(
-          title: "Attendance",
+          title: "...",
           color: MyColors.greyLight,
           colorDark: MyColors.greyDark,
         ),
@@ -55,6 +57,11 @@ class HomePageState extends State<HomePage>
               ),
             )
           ],
+        ),
+        MessMenuTabbed(
+          color: MyColors.greyLight,
+          colorDark: MyColors.greyDark,
+          key: Key("hakuna_matata"),
         )
       ],
     );
@@ -69,11 +76,11 @@ class HomePageState extends State<HomePage>
       onReload: (){},
       icon: Icons.launch,
       buttonCall: () async {
-                      if(await canLaunch("http://snulinks.snu.edu.in/"))
-                      launch("http://snulinks.snu.edu.in/");
-                      else
-                      print("Can't open http://snulinks.snu.edu.in/");
-                    },
+        if(await canLaunch("http://snulinks.snu.edu.in/"))
+          launch("http://snulinks.snu.edu.in/");
+        else
+          print("Can't open http://snulinks.snu.edu.in/");
+      },
     );
   }
 
