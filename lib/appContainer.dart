@@ -17,11 +17,11 @@ class AppContainer extends StatefulWidget
 {
   State createState() => new AppContainerState();
   final Widget 
-    homePage = new HomePage(),
-    schedulePage = new SchedulePage(), 
-    shoutBoxPage = new ShoutBoxPage(), 
-    fastTrackpage = new FastTrackPage(), 
-    attendancePage = new AttendancePage();
+    homePage = HomePage(),
+    schedulePage = SchedulePage(), 
+    shoutBoxPage = ShoutBoxPage(), 
+    fastTrackpage = FastTrackPage(), 
+    attendancePage = AttendancePage();
 }
 
 class AppContainerState extends State<AppContainer>

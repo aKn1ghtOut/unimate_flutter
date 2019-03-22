@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GeneralCard extends StatefulWidget
 {
   final Widget child;
   final Color color;
+  final Color colorDark;
   final bool settles;
+  final String title;
 
-  GeneralCard({this.child, this.color, this.settles = true});
+  final bool popUpMenuEnabled;
+  final PopupMenuButton popUpMenu;
+
+  GeneralCard({this.child, this.color, this.colorDark, this.settles = true, this.title = "Title", this.popUpMenu, this.popUpMenuEnabled =false});
 
   @override
   State createState() => new GeneralCardState();
@@ -34,8 +38,13 @@ class GeneralCardState extends State<GeneralCard> with SingleTickerProviderState
   Widget build(BuildContext context)
   {
     return Card(
-      color: Colors.white,
+      color: widget.color,
       elevation: 5.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(5)
+        )
+      ),
       margin: EdgeInsets.fromLTRB(
         10, 
         20 - (10 * _animation.value), 
@@ -43,39 +52,52 @@ class GeneralCardState extends State<GeneralCard> with SingleTickerProviderState
         (10 * _animation.value) + 10
       ),
       child: Container(
-        margin: EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Text(
-                      "Title",
-                      textAlign: TextAlign.left,
-                      maxLines: 1,
-                      style: TextStyle(
-                        color: Colors.black
-                      ),
-                    )
-                    // PopupMenuButton(
-                    //   icon: new Icon(
-                    //     FontAwesomeIcons.ellipsisV
-                    //   ),
-                    //   itemBuilder: (BuildContext context){
-                    //     return
-                    //   },
-                    //   onSelected: ,
-                    // )
-                  ],
-                )
-              ],
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 10
+                    ),
+                    decoration: BoxDecoration(
+                      color: widget.colorDark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(5),
+                        topRight: Radius.circular(5)
+                      )
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            widget.title,
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        ),
+                        (widget.popUpMenuEnabled ? widget.popUpMenu : Container())
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
+                    width: 100,
+                  )
+                ],
+              ),
             )
           ],
         ),

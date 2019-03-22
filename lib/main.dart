@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 //Pages imports
 import 'appContainer.dart';
 
 void main()
 {
-  runApp(myApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+  .then((_) {
+    runApp(myApp());
+  });
 }
 
 MaterialApp myApp()

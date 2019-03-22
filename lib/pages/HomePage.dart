@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../res/colors.dart';
 
 import './BasePage.dart';
 import '../ui/general.dart';
@@ -20,7 +23,39 @@ class HomePageState extends State<HomePage>
     content = Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        GeneralCard()
+        GeneralCard(
+          title: "C315",
+          color: MyColors.greenLight,
+          colorDark: MyColors.greenDark,
+        ),
+        GeneralCard(
+          title: "D026",
+          color: MyColors.blueLight,
+          colorDark: MyColors.blueDark,
+        ),
+        GeneralCard(
+          title: "Attendance",
+          color: MyColors.greyLight,
+          colorDark: MyColors.greyDark,
+        ),
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: GeneralCard(
+                title: "DH1",
+                color: MyColors.greyLight,
+                colorDark: MyColors.greyDark,
+              ),
+            ),
+            Expanded(
+              child: GeneralCard(
+                title: "DH2",
+                color: MyColors.greyLight,
+                colorDark: MyColors.greyDark,
+              ),
+            )
+          ],
+        )
       ],
     );
   }
