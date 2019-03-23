@@ -5,6 +5,7 @@ import '../res/colors.dart';
 
 import './BasePage.dart';
 import '../ui/misc.dart';
+import '../util/MessMenu.dart';
 
 class HomePage extends StatefulWidget
 {
@@ -39,24 +40,6 @@ class HomePageState extends State<HomePage>
           title: "...",
           color: MyColors.greyLight,
           colorDark: MyColors.greyDark,
-        ),
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: GeneralCard(
-                title: "DH1",
-                color: MyColors.greyLight,
-                colorDark: MyColors.greyDark,
-              ),
-            ),
-            Expanded(
-              child: GeneralCard(
-                title: "DH2",
-                color: MyColors.greyLight,
-                colorDark: MyColors.greyDark,
-              ),
-            )
-          ],
         ),
         MessMenuTabbed(
           color: MyColors.greyLight,
