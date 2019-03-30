@@ -8,8 +8,10 @@ class BasePage extends StatelessWidget
   final VoidCallback onReload;
   final VoidCallback buttonCall;
   final IconData icon;
+  final Key key;
+  final String keyString;
 
-  BasePage(this.title, this.themeColor, this.inside, {this.onReload, this.icon, this.buttonCall});
+  BasePage({this.title, this.themeColor, this.inside, this.onReload, this.icon, this.buttonCall, this.key, this.keyString}) : super(key: key);
 
   Widget build(BuildContext context)
   {

@@ -14,9 +14,9 @@ class SchedulePageState extends State<SchedulePage>
   Widget build(BuildContext context)
   {
     return BasePage(
-      "Schedule", 
-      Colors.blue, 
-      Container(),
+      title: "Schedule", 
+      themeColor: Colors.blue, 
+      inside: Container(),
       onReload: () async => (){},
       icon: Icons.launch,
       buttonCall: () async {

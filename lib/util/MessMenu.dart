@@ -3,6 +3,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
+import 'package:connectivity/connectivity.dart';
 
 class MessMenuTabbed extends StatefulWidget
 {
@@ -483,6 +484,9 @@ class MessMenuTabbedState extends State<MessMenuTabbed> with SingleTickerProvide
     });
   }
 
+  void noNetwork()
+  {}
+  
   static Map<String, Map<String, List<String>>> processJSON(String data)
   {
     Map<String, dynamic> dhMenu = json.decode(data);

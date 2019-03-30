@@ -53,9 +53,9 @@ class HomePageState extends State<HomePage>
   Widget build(BuildContext context)
   {
     return BasePage(
-      "Home", 
-      Colors.yellow, 
-      content,
+      title: "Home", 
+      themeColor: Colors.yellow, 
+      inside: content,
       onReload: (){},
       icon: Icons.launch,
       buttonCall: () async {

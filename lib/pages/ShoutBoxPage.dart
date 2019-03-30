@@ -15,13 +15,10 @@ class ShoutBoxPageState extends State<ShoutBoxPage>
   Widget build(BuildContext context)
   {
     return BasePage(
-      "ShoutBox", 
-      Colors.purple, 
-      Container(),
-      onReload: () async {
-        await new Future.delayed(const Duration(milliseconds: 2000));
-        Scaffold.of(context).showSnackBar(SnackBar(duration: Duration(milliseconds: 2000), content: Text("Hey")));
-      },
+      title: "ShoutBox", 
+      themeColor: Colors.purple, 
+      inside: Container(),
+      onReload: null,
       icon: FontAwesomeIcons.plus,
     );
   }

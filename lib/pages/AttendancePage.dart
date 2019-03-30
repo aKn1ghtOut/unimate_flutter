@@ -14,9 +14,9 @@ class AttendancePageState extends State<AttendancePage>
   Widget build(BuildContext context)
   {
     return BasePage(
-      "Attendance", 
-      Colors.green, 
-      Container(),
+      title: "Attendance", 
+      themeColor: Colors.green, 
+      inside: Container(),
       onReload: () async => (){},
       icon: Icons.launch,
       buttonCall: () async {

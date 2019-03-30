@@ -14,9 +14,9 @@ class FastTrackPageState extends State<FastTrackPage>
   Widget build(BuildContext context)
   {
     return BasePage(
-      "Fast Track", 
-      Colors.red, 
-      Container(),
+      title: "Fast Track", 
+      themeColor: Colors.red, 
+      inside: Container(),
       onReload: () async => (){},
       icon: Icons.launch,
       buttonCall: () async {
