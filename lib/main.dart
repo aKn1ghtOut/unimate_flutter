@@ -15,7 +15,9 @@ void main()
 MaterialApp myApp()
 {
   return new MaterialApp(
-      home: new AppContainer(),
+      home: new Scaffold(
+        body: new AppContainer(),
+      ),
       theme: ThemeData(
         brightness: Brightness.dark,
 

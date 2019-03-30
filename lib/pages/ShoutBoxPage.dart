@@ -6,6 +6,10 @@ import './BasePage.dart';
 
 class ShoutBoxPage extends StatefulWidget
 {
+  final Key key;
+
+  ShoutBoxPage({this.key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => new ShoutBoxPageState();
 }
@@ -18,7 +22,7 @@ class ShoutBoxPageState extends State<ShoutBoxPage>
       title: "ShoutBox", 
       themeColor: Colors.purple, 
       inside: Container(),
-      onReload: null,
+      onReload: () async => (){},
       icon: FontAwesomeIcons.plus,
     );
   }

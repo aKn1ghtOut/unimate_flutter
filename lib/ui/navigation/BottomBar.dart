@@ -4,6 +4,12 @@ import '../../util/MenuItem.dart';
 
 import 'BottomBarButton.dart';
 
+/*
+ * TODO:
+ *  1. Make the BottomBarButton more portable and independent
+ *  2. Use the List map function to create the menu instead of the loop
+*/
+
 class BottomBar extends StatefulWidget
 {
   final BottomBarState state = new BottomBarState();

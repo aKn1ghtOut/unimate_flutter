@@ -43,6 +43,7 @@ class MessMenuTabbedState extends State<MessMenuTabbed> with SingleTickerProvide
   void initState()
   {
     super.initState();
+
     content = Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
@@ -74,6 +75,7 @@ class MessMenuTabbedState extends State<MessMenuTabbed> with SingleTickerProvide
             onMessageReceived: (JavascriptMessage message){
               print("JS Worked");
               createMenu(message.message);
+              hasLoaded = true;
             }
           )
         ]

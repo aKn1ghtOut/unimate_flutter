@@ -10,15 +10,23 @@ import '../util/MessMenu.dart';
 class HomePage extends StatefulWidget
 {
 
+  final MessMenuTabbed messMenuTabbed = MessMenuTabbed(
+          color: MyColors.greyLight,
+          colorDark: MyColors.greyDark
+        );
+
   HomePage({Key key}) : super(key:key);
 
   @override
-  State<StatefulWidget> createState() => new HomePageState();
+  State<HomePage> createState() => new HomePageState();
 }
 
-class HomePageState extends State<HomePage>
+class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin
 {
   Widget content;
+
+  @override
+  bool get wantKeepAlive => true;
 
   void initState()
   {
@@ -41,11 +49,7 @@ class HomePageState extends State<HomePage>
           color: MyColors.greyLight,
           colorDark: MyColors.greyDark,
         ),
-        MessMenuTabbed(
-          color: MyColors.greyLight,
-          colorDark: MyColors.greyDark,
-          key: Key("hakuna_matata"),
-        )
+        widget.messMenuTabbed
       ],
     );
   }
@@ -56,8 +60,12 @@ class HomePageState extends State<HomePage>
       title: "Home", 
       themeColor: Colors.yellow, 
       inside: content,
-      onReload: (){},
+      onReload: () async {
+        initState();
+      },
       icon: Icons.launch,
+      keyString: "homePageKey",
+      key: Key("homePage BasePage"),
       buttonCall: () async {
         if(await canLaunch("http://snulinks.snu.edu.in/"))
           launch("http://snulinks.snu.edu.in/");

@@ -5,6 +5,11 @@ import 'package:url_launcher/url_launcher.dart';
 
 class FastTrackPage extends StatefulWidget
 {
+
+  final Key key;
+
+  FastTrackPage({this.key}) : super(key: key);
+  
   @override
   State<StatefulWidget> createState() => new FastTrackPageState();
 }

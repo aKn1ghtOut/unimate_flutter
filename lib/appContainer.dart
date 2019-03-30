@@ -16,12 +16,6 @@ import './pages/AttendancePage.dart';
 class AppContainer extends StatefulWidget
 {
   State createState() => new AppContainerState();
-  final Widget 
-    homePage = HomePage(key: Key("homePageKey")),
-    schedulePage = SchedulePage(), 
-    shoutBoxPage = ShoutBoxPage(), 
-    fastTrackpage = FastTrackPage(), 
-    attendancePage = AttendancePage();
 }
 
 class AppContainerState extends State<AppContainer>
@@ -29,11 +23,18 @@ class AppContainerState extends State<AppContainer>
 
   Widget inside;
 
+  final Widget 
+    homePage = HomePage(key: PageStorageKey("homePage")),
+    schedulePage = SchedulePage(key: PageStorageKey("schedulePage")), 
+    shoutBoxPage = ShoutBoxPage(key: PageStorageKey("shoutBoxPage")), 
+    fastTrackpage = FastTrackPage(key: PageStorageKey("fastTrackPage")), 
+    attendancePage = AttendancePage(key: PageStorageKey("attendancePage"));
+
   @override
   void initState()
   {
     super.initState();
-    inside = widget.homePage;
+    inside = homePage;
   }
 
   Widget build(BuildContext context)
@@ -56,7 +57,7 @@ class AppContainerState extends State<AppContainer>
                   "Home", 
                   () => this.setState(()
                   {
-                    inside = widget.homePage;
+                    inside = homePage;
                   }),
                   Colors.yellow,
                   selected : true
@@ -66,7 +67,7 @@ class AppContainerState extends State<AppContainer>
                   "Schedule",  
                   () => this.setState(()
                   {
-                    inside = widget.schedulePage;
+                    inside = schedulePage;
                   }),
                   Colors.blue
                 ),
@@ -75,7 +76,7 @@ class AppContainerState extends State<AppContainer>
                   "ShoutBox",  
                   () => this.setState(()
                   {
-                    inside = widget.shoutBoxPage;
+                    inside = shoutBoxPage;
                   }),
                   Colors.purple
                 ),
@@ -84,7 +85,7 @@ class AppContainerState extends State<AppContainer>
                   "Fast Track",  
                   () => this.setState(()
                   {
-                    inside = widget.fastTrackpage;
+                    inside = fastTrackpage;
                   }),
                   Colors.red
                 ),
@@ -93,7 +94,7 @@ class AppContainerState extends State<AppContainer>
                   "Attendance",  
                   () => this.setState(()
                   {
-                    inside = widget.attendancePage;
+                    inside = attendancePage;
                   }),
                   Colors.green
                 ),

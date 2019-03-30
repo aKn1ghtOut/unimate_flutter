@@ -5,6 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 
 class AttendancePage extends StatefulWidget
 {
+  final Key key;
+
+  AttendancePage({this.key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => new AttendancePageState();
 }
