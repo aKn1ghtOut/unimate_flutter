@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'dart:async';
-import 'package:connectivity/connectivity.dart';
 
 class MessMenuTabbed extends StatefulWidget
 {

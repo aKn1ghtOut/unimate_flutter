@@ -19,6 +19,7 @@ MaterialApp myApp()
         body: new AppContainer(),
       ),
       theme: ThemeData(
+        
         brightness: Brightness.dark,
 
         primaryColor: Color.fromRGBO(30, 30, 30, 1),

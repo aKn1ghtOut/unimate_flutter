@@ -10,11 +10,6 @@ import '../util/MessMenu.dart';
 class HomePage extends StatefulWidget
 {
 
-  final MessMenuTabbed messMenuTabbed = MessMenuTabbed(
-          color: MyColors.greyLight,
-          colorDark: MyColors.greyDark
-        );
-
   HomePage({Key key}) : super(key:key);
 
   @override
@@ -24,6 +19,11 @@ class HomePage extends StatefulWidget
 class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin
 {
   Widget content;
+
+  final MessMenuTabbed messMenuTabbed = MessMenuTabbed(
+        color: MyColors.greyLight,
+        colorDark: MyColors.greyDark
+      );
 
   @override
   bool get wantKeepAlive => true;
@@ -49,7 +49,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin
           color: MyColors.greyLight,
           colorDark: MyColors.greyDark,
         ),
-        widget.messMenuTabbed
+        messMenuTabbed
       ],
     );
   }
